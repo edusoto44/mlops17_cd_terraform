@@ -65,7 +65,7 @@ resource "google_bigquery_routine" "cencus_filter_by_age" {
 
   definition_body = <<-SQL
     BEGIN
-      INSERT INTO `datapath-eduardo-soto-mlops17.terraform_01.census_by_age`
+      INSERT INTO `datapath-eduardo-soto-mlops17.mi_dataset.census_by_age`
       SELECT age, workclass, occupation
       FROM `bigquery-public-data.ml_datasets.census_adult_income`
       WHERE age < input_age;
